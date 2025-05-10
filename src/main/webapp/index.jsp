@@ -38,11 +38,12 @@
             text-align: center;
         }
     </style>
+    
 </head>
 <body>
 
 <div class="wrapper">
-    <!-- Navigation -->
+    <!-- Navbar -->
     <jsp:include page="component/navbar.jsp" />
      <br>
     <br>
@@ -51,9 +52,9 @@
     <div class="carousel-container">
         <jsp:include page="component/carousal.jsp" />
     </div>
-     <br>
+     
     <hr>
-    <br>
+    
  <!-- about us -->
     <div class="">
         <jsp:include page="component/aboutus.jsp" />
@@ -61,7 +62,8 @@
     <br>
     <hr>
     <br>
-    <!-- Main Content -->
+    
+    <!-- Our Team Of Doctors -->
     <div class="">
         <jsp:include page="component/ourteam.jsp" />
     </div>
@@ -70,7 +72,7 @@
     <hr>
     <br>
     
-    <!-- Main Content -->
+    <!-- Expandable Questions -->
     <div class="content">
         <jsp:include page="component/expandableq.jsp" />
     </div>
@@ -78,11 +80,11 @@
       <br>
     <hr>
     <br>
+    
     <!-- Footer -->
     <footer>
         <jsp:include page="component/footer.jsp" />
     </footer>
 </div>
-
 </body>
 </html>
