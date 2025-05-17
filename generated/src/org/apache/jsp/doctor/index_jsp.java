@@ -1,0 +1,633 @@
+package org.apache.jsp.doctor;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import com.entity.Doctor;
+import com.dao.DoctorDao;
+import com.db.DBConnect;
+import java.util.List;
+
+public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants.add("/doctor/../component/allcss.jsp");
+    _jspx_dependants.add("/doctor/navbar.jsp");
+  }
+
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_otherwise;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_when_test;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _jspx_tagPool_c_choose = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_otherwise = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_when_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+    _jspx_tagPool_c_choose.release();
+    _jspx_tagPool_c_otherwise.release();
+    _jspx_tagPool_c_when_test.release();
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html; charset=ISO-8859-1");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("<head>\n");
+      out.write("    <title>Doctor Dashboard</title>\n");
+      out.write("    ");
+      out.write("<!-- Bootstrap CSS -->\n");
+      out.write("<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n");
+      out.write("<!-- Font Awesome -->\n");
+      out.write("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css\">\n");
+      out.write("\n");
+      out.write("<style>\n");
+      out.write("    :root {\n");
+      out.write("        --midnight-green: #004d40;\n");
+      out.write("\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    /* Card styling */\n");
+      out.write("    .point-card {\n");
+      out.write("        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);\n");
+      out.write("        border-radius: 10px;\n");
+      out.write("        background-color: #ffffff;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    /* Login button */\n");
+      out.write("    .btn.bg-success {\n");
+      out.write("        background-color: #004953 !important;  /* Midnight Green */\n");
+      out.write("        color: #ffffff !important;              /* White text */\n");
+      out.write("\n");
+      out.write("        font-weight: 500;\n");
+      out.write("        border: none;\n");
+      out.write("        transition: background-color 0.3s ease;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .btn.bg-success:hover {\n");
+      out.write("        background-color: #00695c !important;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    /* Create account link */\n");
+      out.write("    .clink {\n");
+      out.write("        color: #007bff;\n");
+      out.write("        text-decoration: none;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .clink:hover {\n");
+      out.write("        text-decoration: underline;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    /* admin*/\n");
+      out.write("\n");
+      out.write("    .paint-card {\n");
+      out.write("        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);\n");
+      out.write("        border-radius: 10px;\n");
+      out.write("        transition: transform 0.3s ease-in-out;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .paint-card:hover {\n");
+      out.write("        transform: scale(1.02);\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .admin-navbar {\n");
+      out.write("        background-color: #004953;  /* This is a shade of midnight green */\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .admin-navbar .navbar-brand,\n");
+      out.write("    .admin-navbar .nav-link,\n");
+      out.write("    .admin-navbar .dropdown-menu a {\n");
+      out.write("        color: #fff !important;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .admin-navbar .btn-light {\n");
+      out.write("        background-color: #ffffff;\n");
+      out.write("        color: #198754;\n");
+      out.write("        border: none;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    /* Admin Navbar styles */\n");
+      out.write("    .navbar {\n");
+      out.write("        background-color: #004d40;\n");
+      out.write("        color: white;\n");
+      out.write("        position: fixed;\n");
+      out.write("        top: 15px;\n");
+      out.write("        left: 20px;\n");
+      out.write("        right: 20px;\n");
+      out.write("        z-index: 1000;\n");
+      out.write("        border-radius: 12px;\n");
+      out.write("        padding: 10px 20px;\n");
+      out.write("        display: flex;\n");
+      out.write("        align-items: center;\n");
+      out.write("        justify-content: space-between;\n");
+      out.write("        flex-wrap: wrap;\n");
+      out.write("        box-shadow: 0 4px 10px rgba(0,0,0,0.1);\n");
+      out.write("        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .navbar-header {\n");
+      out.write("        display: flex;\n");
+      out.write("        align-items: center;\n");
+      out.write("        justify-content: space-between;\n");
+      out.write("        width: 100%;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .logo {\n");
+      out.write("        color: white;\n");
+      out.write("        font-size: 22px;\n");
+      out.write("        font-weight: 700;\n");
+      out.write("        text-decoration: none;\n");
+      out.write("        display: flex;\n");
+      out.write("        align-items: center;\n");
+      out.write("        gap: 8px;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .logo i {\n");
+      out.write("        font-size: 26px;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .menu-icon {\n");
+      out.write("        font-size: 28px;\n");
+      out.write("        color: white;\n");
+      out.write("        cursor: pointer;\n");
+      out.write("        display: none;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .nav-links {\n");
+      out.write("        display: flex;\n");
+      out.write("        justify-content: flex-end;\n");
+      out.write("        align-items: center;\n");
+      out.write("        gap: 20px;\n");
+      out.write("        flex-grow: 1;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .nav-links a, .nav-links .btn {\n");
+      out.write("        color: white;\n");
+      out.write("        padding: 8px 14px;\n");
+      out.write("        text-decoration: none;\n");
+      out.write("        font-size: 16px;\n");
+      out.write("        border-radius: 8px;\n");
+      out.write("        background: transparent;\n");
+      out.write("        border: none;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .nav-links a:hover, .nav-links .btn:hover {\n");
+      out.write("        background-color: #26a69a;\n");
+      out.write("        color: white;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .dropdown {\n");
+      out.write("        position: relative;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .dropdown-menu {\n");
+      out.write("        position: absolute;\n");
+      out.write("        right: 0;\n");
+      out.write("        background-color: white;\n");
+      out.write("        color: black;\n");
+      out.write("        border-radius: 8px;\n");
+      out.write("        box-shadow: 0 4px 10px rgba(0,0,0,0.15);\n");
+      out.write("        margin-top: 8px;\n");
+      out.write("        display: none;\n");
+      out.write("        min-width: 140px;\n");
+      out.write("        z-index: 1100;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .dropdown:hover .dropdown-menu {\n");
+      out.write("        display: block;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .dropdown-menu li a {\n");
+      out.write("        color: black;\n");
+      out.write("        padding: 10px 16px;\n");
+      out.write("        display: block;\n");
+      out.write("        text-decoration: none;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .dropdown-menu li a:hover {\n");
+      out.write("        background-color: #eee;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    @media screen and (max-width: 768px) {\n");
+      out.write("        .menu-icon {\n");
+      out.write("            display: block;\n");
+      out.write("        }\n");
+      out.write("        .nav-links {\n");
+      out.write("            display: none;\n");
+      out.write("            flex-direction: column;\n");
+      out.write("            width: 100%;\n");
+      out.write("            margin-top: 12px;\n");
+      out.write("            background-color: #004d40;\n");
+      out.write("            border-radius: 12px;\n");
+      out.write("            padding: 10px 0;\n");
+      out.write("            box-shadow: 0 4px 10px rgba(0,0,0,0.1);\n");
+      out.write("        }\n");
+      out.write("        .nav-links.show {\n");
+      out.write("            display: flex;\n");
+      out.write("        }\n");
+      out.write("        .nav-links a, .nav-links .btn {\n");
+      out.write("            text-align: center;\n");
+      out.write("            padding: 12px 16px;\n");
+      out.write("            width: 100%;\n");
+      out.write("            border-radius: 0;\n");
+      out.write("        }\n");
+      out.write("        .dropdown:hover .dropdown-menu {\n");
+      out.write("            display: none;\n");
+      out.write("        }\n");
+      out.write("        .dropdown .dropdown-menu {\n");
+      out.write("            position: relative;\n");
+      out.write("            box-shadow: none;\n");
+      out.write("            background-color: transparent;\n");
+      out.write("            margin-top: 0;\n");
+      out.write("        }\n");
+      out.write("    }\n");
+      out.write("    /* admin navbar newly added dropdown*/\n");
+      out.write("\n");
+      out.write("    .admin-navbar {\n");
+      out.write("        background-color: #004d40 !important; /* Midnight Green */\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .admin-navbar .navbar-brand,\n");
+      out.write("    .admin-navbar .nav-link,\n");
+      out.write("    .admin-navbar .dropdown-menu a {\n");
+      out.write("        color: #ffffff !important;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .admin-navbar .dropdown-menu {\n");
+      out.write("        background-color: #00695c; /* slightly lighter for contrast */\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    .admin-navbar .dropdown-menu a:hover {\n");
+      out.write("        background-color: #00796b; /* hover effect */\n");
+      out.write("        color: #ffffff !important;\n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    /* Navbar brand icon */\n");
+      out.write(".navbar-brand-icon {\n");
+      out.write("  display: inline-block;\n");
+      out.write("  width: 35px;\n");
+      out.write("  height: 35px;\n");
+      out.write("  border-radius: 50%;\n");
+      out.write("  background-color: white;\n");
+      out.write("  color: #004d40; /* Midnight Green */\n");
+      out.write("  font-weight: bold;\n");
+      out.write("  font-size: 20px;\n");
+      out.write("  line-height: 35px;\n");
+      out.write("  text-align: center;\n");
+      out.write("  border: 2px solid #004d40;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write("</style>\n");
+      out.write("\n");
+      out.write(" <!-- your CSS, Bootstrap etc -->\n");
+      out.write("    <style>\n");
+      out.write("        html, body {\n");
+      out.write("            height: 100%;\n");
+      out.write("            margin: 0;\n");
+      out.write("            padding: 0;\n");
+      out.write("        }\n");
+      out.write("        .page-container {\n");
+      out.write("            min-height: 100vh;\n");
+      out.write("            position: relative;\n");
+      out.write("            padding-bottom: 70px; /* footer height */\n");
+      out.write("            box-sizing: border-box;\n");
+      out.write("        }\n");
+      out.write("\n");
+      out.write("        \n");
+      out.write("        .card {\n");
+      out.write("            box-shadow: 0 0 10px rgba(0,0,0,0.15);\n");
+      out.write("        }\n");
+      out.write("        .dashboard-summary {\n");
+      out.write("            margin-bottom: 30px;\n");
+      out.write("        }\n");
+      out.write("    </style>\n");
+      out.write("</head>\n");
+      out.write("<body>\n");
+      out.write("\n");
+      out.write("<div class=\"page-container\">\n");
+      out.write("\n");
+      out.write("    ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!-- Bootstrap CSS -->\n");
+      out.write("<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n");
+      out.write("\n");
+      out.write("<!-- Font Awesome -->\n");
+      out.write("<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\">\n");
+      out.write("\n");
+      out.write("<link rel=\"stylesheet\" href=\"../component/allcss.css\">\n");
+      out.write("\n");
+      out.write("<nav class=\"navbar navbar-expand-lg admin-navbar\">\n");
+      out.write("  <div class=\"container-fluid\">\n");
+      out.write("    <a class=\"navbar-brand\" href=\"#\"><span class=\"navbar-brand-icon\">N</span>Nova Hospital</a>\n");
+      out.write("\n");
+      out.write("    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavDropdown\">\n");
+      out.write("      <span class=\"navbar-toggler-icon\"></span>\n");
+      out.write("    </button>\n");
+      out.write("\n");
+      out.write("    <div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNavDropdown\">\n");
+      out.write("      <ul class=\"navbar-nav\">\n");
+      out.write("        <li class=\"nav-item\">\n");
+      out.write("          <a class=\"nav-link\" href=\"../index.jsp\">Home</a>\n");
+      out.write("        </li>\n");
+      out.write("        <li class=\"nav-item\">\n");
+      out.write("          <a class=\"nav-link\" href=\"#\">Patient</a>\n");
+      out.write("        </li>\n");
+      out.write("        <li class=\"nav-item\">\n");
+      out.write("          <a class=\"nav-link\" href=\"view_doctor.jsp\">View Doctors</a>\n");
+      out.write("        </li>\n");
+      out.write("        <li class=\"nav-item\">\n");
+      out.write("          <a class=\"nav-link\" href=\"#\">Patients</a>\n");
+      out.write("        </li>\n");
+      out.write("\n");
+      out.write("        <!-- Doctor dropdown -->\n");
+      out.write("        <li class=\"nav-item dropdown\">\n");
+      out.write("          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"adminDropdown\" role=\"button\" data-bs-toggle=\"dropdown\">\n");
+      out.write("            <i class=\"fas fa-user-shield\"></i>\n");
+      out.write("            ");
+      if (_jspx_meth_c_choose_0(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("          </a>\n");
+      out.write("          <ul class=\"dropdown-menu dropdown-menu-end\" aria-labelledby=\"adminDropdown\">\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"#\">Edit Profile</a></li>\n");
+      out.write("            <li><hr class=\"dropdown-divider\"></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"../doctorLogout\">Logout</a></li>\n");
+      out.write("          </ul>\n");
+      out.write("        </li>\n");
+      out.write("      </ul>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("</nav>\n");
+      out.write("\n");
+      out.write("<!-- Bootstrap Bundle JS (for dropdown and collapse) -->\n");
+      out.write("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    <div class=\"container-fluid p-4\">\n");
+      out.write("        <h2 class=\"text-center mb-4\">Doctor Dashboard</h2>\n");
+      out.write("\n");
+      out.write("        <!-- Summary Cards -->\n");
+      out.write("        <div class=\"row dashboard-summary\">\n");
+      out.write("            ");
+
+                DoctorDao dao = new DoctorDao(DBConnect.getConn());
+                List<Doctor> doctors = dao.getAllDoctor();
+                int totalDoctors = doctors.size();
+                // You can add other stats here, e.g. total specializations etc.
+            
+      out.write("\n");
+      out.write("\n");
+      out.write("            <div class=\"col-md-4\">\n");
+      out.write("                <div class=\"card text-white bg-primary p-3\">\n");
+      out.write("                    <div class=\"card-body text-center\">\n");
+      out.write("                        <h5>Total Doctors</h5>\n");
+      out.write("                        <p class=\"fs-2\">");
+      out.print( totalDoctors );
+      out.write("</p>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("\n");
+      out.write("            <div class=\"col-md-4\">\n");
+      out.write("                <div class=\"card text-white bg-success p-3\">\n");
+      out.write("                    <div class=\"card-body text-center\">\n");
+      out.write("                        <h5>Specialists</h5><br>\n");
+      out.write("                        \n");
+      out.write("                        <p class=\"fs-2\">10</p>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("\n");
+      out.write("            <div class=\"col-md-4\">\n");
+      out.write("                <div class=\"card text-white bg-info p-3\">\n");
+      out.write("                    <div class=\"card-body text-center\">\n");
+      out.write("                        <h5>Upcoming Appointments</h5><br>\n");
+      out.write("                        <p class=\"fs-2\">15</p> \n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("        </div>\n");
+      out.write("\n");
+      out.write("        <!-- Doctors Table -->\n");
+      out.write("        <div class=\"card\">\n");
+      out.write("            <div class=\"card-body\">\n");
+      out.write("                <h4 class=\"card-title\">Doctor List</h4>\n");
+      out.write("                <table class=\"table table-striped table-hover mt-3\">\n");
+      out.write("                    <thead>\n");
+      out.write("                        <tr>\n");
+      out.write("                            <th>Full Name</th>\n");
+      out.write("                            <th>DOB</th>\n");
+      out.write("                            <th>Qualification</th>\n");
+      out.write("                            <th>Specialist</th>\n");
+      out.write("                            <th>Email</th>\n");
+      out.write("                            <th>Mobile No</th>\n");
+      out.write("                            <th>Actions</th>\n");
+      out.write("                        </tr>\n");
+      out.write("                    </thead>\n");
+      out.write("                    <tbody>\n");
+      out.write("                        ");
+
+                            for (Doctor d : doctors) {
+                        
+      out.write("\n");
+      out.write("                        <tr>\n");
+      out.write("                            <td>");
+      out.print( d.getFullName() );
+      out.write("</td>\n");
+      out.write("                            <td>");
+      out.print( d.getDob() );
+      out.write("</td>\n");
+      out.write("                            <td>");
+      out.print( d.getQualification() );
+      out.write("</td>\n");
+      out.write("                            <td>");
+      out.print( d.getSpecialist() );
+      out.write("</td>\n");
+      out.write("                            <td>");
+      out.print( d.getEmail() );
+      out.write("</td>\n");
+      out.write("                            <td>");
+      out.print( d.getMobNo() );
+      out.write("</td>\n");
+      out.write("                            <td>\n");
+      out.write("                                <a href=\"admin/edit_doctor.jsp?id=");
+      out.print( d.getId() );
+      out.write("\" class=\"btn btn-sm btn-warning\">Edit</a>\n");
+      out.write("                                <a href=\"../deleteDoctor?id=");
+      out.print( d.getId() );
+      out.write("\" class=\"btn btn-sm btn-danger\" onclick=\"return confirm('Are you sure to delete this doctor?');\">Delete</a>\n");
+      out.write("                            </td>\n");
+      out.write("                        </tr>\n");
+      out.write("                        ");
+
+                            }
+                        
+      out.write("\n");
+      out.write("                    </tbody>\n");
+      out.write("                </table>\n");
+      out.write("            </div>\n");
+      out.write("        </div>\n");
+      out.write("    </div>\n");
+      out.write("\n");
+      out.write("</div> \n");
+      out.write("\n");
+      out.write("<footer>\n");
+      out.write("    ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "../component/footer.jsp", out, false);
+      out.write("\n");
+      out.write("</footer>\n");
+      out.write("\n");
+      out.write("</body>\n");
+      out.write("</html>\n");
+      out.write("\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+
+  private boolean _jspx_meth_c_choose_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:choose
+    org.apache.taglibs.standard.tag.common.core.ChooseTag _jspx_th_c_choose_0 = (org.apache.taglibs.standard.tag.common.core.ChooseTag) _jspx_tagPool_c_choose.get(org.apache.taglibs.standard.tag.common.core.ChooseTag.class);
+    _jspx_th_c_choose_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_choose_0.setParent(null);
+    int _jspx_eval_c_choose_0 = _jspx_th_c_choose_0.doStartTag();
+    if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("              ");
+        if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("              ");
+        if (_jspx_meth_c_otherwise_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("            ");
+        int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_choose_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_0);
+      return true;
+    }
+    _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_when_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:when
+    org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_0 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+    _jspx_th_c_when_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_when_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+    _jspx_th_c_when_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty sessionScope.doctorFullName}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_when_0 = _jspx_th_c_when_0.doStartTag();
+    if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                ");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.doctorFullName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("\n");
+        out.write("              ");
+        int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_when_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_0);
+      return true;
+    }
+    _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_otherwise_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:otherwise
+    org.apache.taglibs.standard.tag.common.core.OtherwiseTag _jspx_th_c_otherwise_0 = (org.apache.taglibs.standard.tag.common.core.OtherwiseTag) _jspx_tagPool_c_otherwise.get(org.apache.taglibs.standard.tag.common.core.OtherwiseTag.class);
+    _jspx_th_c_otherwise_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_otherwise_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
+    int _jspx_eval_c_otherwise_0 = _jspx_th_c_otherwise_0.doStartTag();
+    if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                Doctor\n");
+        out.write("              ");
+        int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_otherwise_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_0);
+      return true;
+    }
+    _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_0);
+    return false;
+  }
+}
