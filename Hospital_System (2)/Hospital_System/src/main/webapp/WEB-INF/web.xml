@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>DoctorLogin</servlet-name>
+  	<display-name>DoctorLogin</display-name>
+  	<description></description>
+  	<servlet-class>com.doctor.servlet.DoctorLogin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>doctorlogin</servlet-name>
+  	<display-name>doctorlogin</display-name>
+  	<description></description>
+  	<servlet-class>com.doctor.servlet.doctorlogin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DoctorLogin1</servlet-name>
+  	<display-name>DoctorLogin1</display-name>
+  	<description></description>
+  	<servlet-class>com.doctor.servlet.DoctorLogin1</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>D</servlet-name>
+  	<display-name>D</display-name>
+  	<description></description>
+  	<servlet-class>com.doctor.servlet.D</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Doctorlogin</servlet-name>
+  	<display-name>Doctorlogin</display-name>
+  	<description></description>
+  	<servlet-class>com.doctor.controller.Doctorlogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DoctorLogin</servlet-name>
+  	<url-pattern>/DoctorLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>doctorlogin</servlet-name>
+  	<url-pattern>/doctorlogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DoctorLogin1</servlet-name>
+  	<url-pattern>/DoctorLogin1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>D</servlet-name>
+  	<url-pattern>/D</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Doctorlogin</servlet-name>
+  	<url-pattern>/Doctorlogin</url-pattern>
+  </servlet-mapping>
+</web-app>
