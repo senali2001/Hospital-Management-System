@@ -1,10 +1,17 @@
+<%@page import="com.dao.AppointmentDao"%>
+<%@page import="com.entity.Doctor"%>
+<%@page import="com.entity.Appointment"%>
+<%@page import="java.util.List"%>
+<%@page import="com.dao.DoctorDao"%>
+<%@page import="com.db.DBConnect"%>
+<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>NovaLife Hospital</title>
 <%@include file="component/allcss.jsp"%>
 <style type="text/css">
 .paint.card {
@@ -12,7 +19,6 @@
 }
 .backImg {
     background: linear-gradient(rgbo(0, 0, 0, .4), rgbo(0, 0, 0, .4)),
-        url("img/hospital.jpg");
     height: 20vh;
     width: 100%;
     background-size: cover;
@@ -21,7 +27,7 @@
 </style>
 </head>
 <body>
-     <%@include file="component/navbar.jsp"%>
+     <%@include file="user/usernavbar.jsp"%>
      
      <div class="container-fluid backImg p-5">
          <p class="text-center fs-2 text-white"></p>
@@ -49,7 +55,7 @@
                              <tbody>
                                   <%
                                   User user = (User) session.getAttribute("userObj");
-                                  AppointmentDAO dao = new AppointmentDAO(DBConnect.getConn());
+                                  AppointmentDao dao = new AppointmentDao(DBConnect.getConn());
                                   DoctorDao dao2 = new DoctorDao(DBConnect.getConn());
                                   List<Appointment> list = dao.getAllAppointmentByLoginUser(user.getId());
                                   for (Appointment ap : list) {
@@ -84,10 +90,13 @@
              </div>
              
                   <div class="col-md-3 p-3">
-                      <img alt="" src="img/doct.jpg">
+                      <img alt="" src="https://encrypted-tbn0.gstatic.com/images?
+                      q=tbn:ANd9GcTbn1HWIc2VQ3tNg0PYaqRfWeHI4BK_9SaGuw&s">
                   </div>
               </div>
           </div>
-               
+      <footer>
+    <jsp:include page="component/footer.jsp" />
+</footer>         
 </body>
 </html>
