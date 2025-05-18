@@ -25,10 +25,10 @@
           <a class="nav-link" href="../index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../view_appointment.jsp">View My Appointments</a>
+          <a class="nav-link" href="doctor.jsp">Doctors</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../admin/view_doctor.jsp">View Doctors</a>
+          <a class="nav-link" href="view_doctor.jsp">View Doctors</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="patient.jsp">Patient</a>
