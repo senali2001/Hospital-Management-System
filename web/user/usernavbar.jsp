@@ -23,10 +23,10 @@
           <a class="nav-link" href="../index.jsp">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../user_appointment.jsp">NEW APPOINTMENT</a>
+          <a class="nav-link" href="/user_appointment.jsp">NEW APPOINTMENT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="view_appointment.jsp">VIEW MY APPOINTMENT</a>
+          <a class="nav-link" href="/view_appointment.jsp">VIEW MY APPOINTMENT</a>
         </li>
 
         <!-- Admin dropdown -->
