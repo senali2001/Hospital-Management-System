@@ -8,11 +8,11 @@ import com.entity.Appointment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppointmentDAO {
+public class AppointmentDao {
  
 	    private Connection conn;
 
-		public AppointmentDAO(Connection conn) {
+		public AppointmentDao(Connection conn) {
 			super();
 			this.conn = conn;
 		}
