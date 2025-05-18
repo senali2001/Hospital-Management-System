@@ -7,9 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import javax.servlet.annotation.webServlet;
 import com.dao.AppointmentDAO;
-import com.entity.Appointment;
+import com.db.DBConnect;
+
+public class Appointment extends HttpServlet {
+    
+
+
+    private Appointment(int userId, String fullname, String gender, String age, String appointDate, String email, String phno, String diseases, int doctorId, String address, String pending) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 @webServlet("/appAppointment")
 public class AppointmentServlet extends HttpServlet{
@@ -17,7 +25,7 @@ public class AppointmentServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		int userId = Integer.parseInt(req.getParameter("userid"));
+	int userId = Integer.parseInt(req.getParameter("userid"));
         String fullname = req.getParameter("fullname");
         String gender = req.getParameter("gender");
         String age = req.getParameter("age");
