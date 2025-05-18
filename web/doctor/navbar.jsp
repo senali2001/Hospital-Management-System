@@ -23,13 +23,13 @@
           <a class="nav-link" href="../index.jsp">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Patient</a>
+          <a class="nav-link" href="../view_appointment.jsp">View My Appointments</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="view_doctor.jsp">View Doctors</a>
+          <a class="nav-link" href="../admin/view_doctor.jsp">View Doctors</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Patients</a>
+          <a class="nav-link" href="../admin/patient.jsp">Patients</a>
         </li>
 
         <!-- Doctor dropdown -->
