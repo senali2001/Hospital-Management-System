@@ -1,6 +1,12 @@
 package com.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.entity.Appointment;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AppointmentDAO {
  
@@ -43,14 +49,14 @@ public class AppointmentDAO {
 			return f;
 		}
 		
-		public List<Appointment> getAllAppointmentByDoctorLogin(int doctorId) {
+		public List<Appointment> getAllAppointmentByLoginUser(int userId) {
 			List<Appointment> list = new ArrayList<Appointment>();
 			Appointment ap = null;
 			
 			try {
 				String sql="select * from appointment where doctor_id=?";
 				PreparedStatement ps = conn.prepareStatement(sql);
-				ps.setInt(1, doctorId);
+				ps.setInt(1, userId);
 				
 				ResultSet rs=ps.executeQuery();
 				while(rs.next())
@@ -76,4 +82,8 @@ public class AppointmentDAO {
 			
 			return list;
 		}
+
+	        public boolean addAppointment(com.user.servlet.Appointment ap) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
