@@ -84,6 +84,39 @@ public class AppointmentDao {
 		return list;
 	}
 
+	public List<Appointment> getAllAppointment() {
+    List<Appointment> list = new ArrayList<>();
+    try {
+        Connection conn = DB.getConnection();
+        String sql = "SELECT * FROM appointments"; // Use your table name
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        
+        while (rs.next()) {
+            Appointment ap = new Appointment();
+            ap.setId(rs.getInt(1));
+            ap.setUserId(rs.getInt(2));
+            ap.setFullName(rs.getString(3));
+            ap.setGender(rs.getString(4));
+            ap.setAge(rs.getString(5));
+            ap.setAppoinDate(rs.getString(6));
+            ap.setEmail(rs.getString(7));
+            ap.setPhNo(rs.getString(8));
+            ap.setDiseases(rs.getString(9));
+            ap.setDoctorId(rs.getInt(10));
+            ap.setAddress(rs.getString(11));
+            ap.setStatus(rs.getString(12));
+            list.add(ap);
+        }
+        
+        conn.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return list;
+}
+
+
     public boolean addAppointment(com.user.servlet.Appointment ap) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
